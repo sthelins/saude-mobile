@@ -31,8 +31,6 @@ fun LoginScreen() {
         mutableStateOf(false)
     }
 
-    var isClicked by remember { mutableStateOf(false) }
-
     Column(modifier = Modifier.background(Color(0xFF8BC34A))) {
         
         Column(modifier = Modifier
