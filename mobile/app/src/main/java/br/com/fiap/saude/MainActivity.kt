@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.fiap.saude.screens.LoginScreen
+import br.com.fiap.saude.screens.MainScreen
 import br.com.fiap.saude.ui.theme.SaudeTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,10 @@ class MainActivity : ComponentActivity() {
                         startDestination = "login"
                     ) {
                         composable(route = "login") {
-                            LoginScreen() }
+                            LoginScreen(navController) }
+                        composable(route = "main") {
+                            MainScreen()
+                        }
                     }
                 }
             }

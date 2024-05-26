@@ -23,9 +23,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
 
     var expanded by remember {
         mutableStateOf(false)
@@ -72,7 +73,7 @@ fun LoginScreen() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Button(onClick = { },
+                Button(onClick = {navController.navigate("main") },
                        modifier = Modifier.width(250.dp)
                 ) {
                     Text(text = "BENEFICIÁRIO",
