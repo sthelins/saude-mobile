@@ -40,9 +40,11 @@ fun CardDefault(alergia: Alergia) {
                         .fillMaxWidth()
                         .padding(1.5.dp)
                         .height(50.dp)) {
-                    Icon(painter = painterResource(id = R.drawable.check_branco), contentDescription = "Ícone de alergia verificada")
+                    Icon(painter = painterResource(id = R.drawable.check_branco),
+                        contentDescription = "Ícone de alergia verificada",
+                        tint = Color.White)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Verificado")
+                    Text(text = "Verificado", color = Color.White)
                 }
             } else {
                 //Não verificado
@@ -51,9 +53,11 @@ fun CardDefault(alergia: Alergia) {
                         .background(Color(0xFFD3102D).copy(alpha = 0.5f))
                         .fillMaxWidth()
                         .padding(1.5.dp)) {
-                    Icon(painter = painterResource(id = R.drawable.warning_branco), contentDescription = "Ícone de alergia não verificada")
+                    Icon(painter = painterResource(id = R.drawable.warning_branco),
+                        contentDescription = "Ícone de alergia não verificada",
+                        tint = Color.White)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Não verificado")
+                    Text(text = "Não verificado", color = Color.White)
                 }
             }
         }
