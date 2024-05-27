@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.fiap.saude.screens.DadosPessoaisScreen
 import br.com.fiap.saude.screens.LoginScreen
 import br.com.fiap.saude.screens.MainScreen
 import br.com.fiap.saude.ui.theme.SaudeTheme
@@ -35,7 +36,10 @@ class MainActivity : ComponentActivity() {
                         composable(route = "login") {
                             LoginScreen(navController) }
                         composable(route = "main") {
-                            MainScreen()
+                            MainScreen(navController)
+                        }
+                        composable(route = "dadospessoais") {
+                            DadosPessoaisScreen(navController)
                         }
                     }
                 }

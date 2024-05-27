@@ -29,11 +29,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import br.com.fiap.saude.R
 import br.com.fiap.saude.ui.theme.SaudeTheme
 
 @Composable
-fun NavBar() {
+fun NavBar(navController: NavController) {
 
     var expanded by remember {
         mutableStateOf(false)
@@ -56,7 +57,7 @@ fun NavBar() {
             Icon(painter = painterResource(id = R.drawable.menu_branco), contentDescription = "Ícone de menu")
         }
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("dadospessoais") },
             shape = CircleShape,
             colors = ButtonDefaults.buttonColors(Color.Transparent),
             contentPadding = PaddingValues(0.dp),
@@ -81,11 +82,11 @@ fun NavBar() {
             ) {
                 Icon(painter = painterResource(id = R.drawable.close_branco), contentDescription = "Ícone de menu")
             }
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { navController.navigate("main") }) {
                 Text(text = "HOME",
                     color = Color.White)
             }
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { navController.navigate("dadospessoais") }) {
                 Text(text = "DADOS PESSOAL",
                     color = Color.White)
             }
@@ -102,6 +103,6 @@ fun NavBar() {
 @Composable
 fun GreetingPreview() {
     SaudeTheme {
-        NavBar()
+        //NavBar()
     }
 }
