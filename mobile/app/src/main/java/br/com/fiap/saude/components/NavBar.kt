@@ -6,11 +6,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -29,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.saude.R
 import br.com.fiap.saude.ui.theme.SaudeTheme
@@ -68,12 +71,9 @@ fun NavBar(navController: NavController) {
         }
     }
     } else {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxSize()
-            .background(Color(0xFF6739B7)),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(horizontalAlignment = Alignment.End,
+            modifier = Modifier.background(Color(0xFF6739B7))
+            .fillMaxWidth()) {
             Button(
                 onClick = { expanded = !expanded },
                 colors = ButtonDefaults.buttonColors(Color.Transparent,
@@ -82,17 +82,32 @@ fun NavBar(navController: NavController) {
             ) {
                 Icon(painter = painterResource(id = R.drawable.close_branco), contentDescription = "Ícone de menu")
             }
-            Button(onClick = { navController.navigate("main") }) {
+        }
+        Column(modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxSize()
+            .background(Color(0xFF6739B7)),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(colors = ButtonDefaults.buttonColors(Color.Transparent),
+                onClick = { navController.navigate("main") }) {
                 Text(text = "HOME",
-                    color = Color.White)
+                    color = Color.White,
+                    fontSize = 26.sp)
             }
-            Button(onClick = { navController.navigate("dadospessoais") }) {
+            Spacer(modifier = Modifier.height(15.dp))
+            Button(colors = ButtonDefaults.buttonColors(Color.Transparent),
+                onClick = { navController.navigate("dadospessoais") }) {
                 Text(text = "DADOS PESSOAL",
-                    color = Color.White)
+                    color = Color.White,
+                    fontSize = 26.sp)
             }
-            Button(onClick = { /*TODO*/ }) {
+            Spacer(modifier = Modifier.height(15.dp))
+            Button(colors = ButtonDefaults.buttonColors(Color.Transparent),
+                onClick = { /*TODO*/ }) {
                 Text(text = "CONFIGURAÇÕES",
-                    color = Color.White)
+                    color = Color.White,
+                    fontSize = 26.sp)
             }
 
         }
