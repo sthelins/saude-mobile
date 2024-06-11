@@ -46,7 +46,7 @@ fun NavBar(navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp)
+            .height(60.dp)
             .background(Color(0xFF6739B7)),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
