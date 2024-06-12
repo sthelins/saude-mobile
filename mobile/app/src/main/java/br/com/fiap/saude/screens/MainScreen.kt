@@ -52,10 +52,10 @@ fun MainScreen(navController: NavController) {
                 .background(Color(0xFFD3D3D3))
                 .padding(10.dp),
                 contentAlignment = Alignment.Center) {
-                Text(text = "DOENÇAS CRÔNICAS", color = Color.Black, fontWeight = FontWeight.Bold)
+                Text(text = "ALERGIAS API", color = Color.Black, fontWeight = FontWeight.Bold)
             }
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = "NENHUMA DOENÇA CRÔNICA ENCONTRADA",modifier = Modifier.padding(start = 10.dp))
+            Text(text = "NENHUMA ALEGIA ENCONTRADA",modifier = Modifier.padding(start = 10.dp))
             Spacer(modifier = Modifier.height(20.dp))
             Box(modifier = Modifier
                 .fillMaxWidth()
